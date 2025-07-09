@@ -1,3 +1,9 @@
+---
+layout: page
+title: "softare Eng. lecture note
+permalink: /docs/softwareEng2025
+---
+
 課題
 
 第1回
