@@ -183,3 +183,125 @@ WBS(Work Breakdown Structure)
 各グループの作業を洗い出す
 もれなくダブりなく
 （MECE: Mutually Exclusive and Collectively Exhaustive）
+
+第7回
+コーディング
+
+他人が見ても読みやすいコードを書くべき
+基準の1つとしてPythonのPEP8がある
+
+・1行の長さ
+79文字以内にする。docstring やコメントは72文字以内にする。
+行を継続する場合は、折り返された要素を縦に揃える（Hangingindentation）
+
+・レイアウト
+1レベルインデントするごとに、スペース（タブではなく）を4つ使う
+
+・スペース
+演算子の前後にスペースを前後に一つずつ空ける
+無駄なスペースを入れない
+
+・改行
+文を重ねない、演算子の位置を揃える
+
+・import
+標準ライブラリ
+サードパーティに関連するもの
+ローカルな アプリケーション/ライブラリ に特有のもの
+
+上記以外の内容もいっぱいある
+そして、PEP8に基づいてコードをチェックするflake8というツールがある
+
+第8回
+バージョン管理
+
+5W1Hに気を付けてファイルを管理する
+
+git
+
+分散管理型のバージョン管理システムで以下の特徴がある
+・変更履歴が残る
+・変更した箇所に戻ることができる
+・他人と共同編集できる
+
+フローがあり、
+main branch | release branch | development branch | feature branch
+の4つを使い分けて開発を進めていく
+
+第10回
+git演習
+
+以下に資料に載っているgitコマンドを記載する。
+git init
+    gitの初期化・設定開始
+git status
+    ワークツリーのステータスを表示
+git config 
+    設定周りの確認・変更
+git log
+    ログを表示
+    -- onelineでコミットメッセージの1行のみの一覧表示
+git diff
+    ファイルの差分を表示
+git add
+    ステージングエリアに追加
+git commit 
+    コミットの実行
+git commit --amend 
+    コミットの修正
+git checkout
+    削除されたファイルを復旧や過去コミットの復元など（元に戻す変更がstaging area/index内にある場合）
+git reset
+    コミットのリセット
+git revert
+    「コミットの変更を打ち消す」コミット
+git rm
+    ファイルとindex情報の削除
+git clone
+    レポジトリをコピー
+git pull
+    リモートレポジトリの同期	
+git push
+    変更をアップロードする
+git request-pull
+    プルリクエスト：変更依頼
+git remote
+    リモートレポジトリの設定
+git branch
+    ブランチの作成
+git checkout
+    ブランチの切り替え
+git merge
+    ブランチの統合
+    --ff-only: fast forward only. 変更のない統合先ブランチにマージ
+git clone
+    レポジトリをコピー
+git push
+    変更をアップロードする
+
+第11回
+github
+
+リモートレポジトリのホスティングサービス
+以下に資料に載っている機能を記載する。
+clone/fork
+    forkでリモートレポジトリをコピー、cloneでローカルレポジトリにコピー
+template
+    いくつでもforkできる
+issues
+    レポジトリに関する問題・課題・バグ・機能追加や質問などを挙げるための機能
+    Redmineでいうticket
+projects
+    issuesなどを管理するためのテーブル・kanban
+
+第12回
+CI/CD
+
+Continuous Integration (CI)
+    コード変更を共有リポジトリに頻繁に統合するプロセス
+    自動テストとビルドを定期的に実行し、バグの早期発見と修正を可能に
+    CIの自動化により開発のスムーズな進行を促進
+Continuous Delivery (CD)
+    コード変更をテスト環境や本番環境に自動的にデプロイするプロセス
+    自動デプロイメントを組み込み、手動操作によるデプロイの必要性を排除
+    CDにより、ユーザーフィードバックを迅速に反映可能
